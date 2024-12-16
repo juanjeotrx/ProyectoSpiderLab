@@ -29,11 +29,24 @@ En esta especie en concreto se observa que a veces las arañas machos hacen tram
 library('dplyr')
 library('ggplot2')
 ```
+<!-- Al abrir los datos y revisarlos haciendo un summary, nos encontramos muchos datos perdidos o que faltaban (NA), para solucionar esto, al documento original "spider-lab-gifts.csv" le sometimos a un na.omit para eliminar las filas que contuvieran datos NA. Una vez eliminados los NA, teniamos que crear un nuevo documento .csv que contuvieran nuestros datos sin los NA, esto lo hicimos con write.csv-->
+```{r Limpiar datos, echo=FALSE}
+#Demostración
+#mydatasinNA <- na.omit(spider_lab_gifts) 
+```
+```{r Crear .csv, echo=FALSE}
+#Demostración
+#write.csv(mydatasinNA, file = "mi_tabla.csv")
+```
+
 <!-- Leer los datos desde el fichero que está en la misma carpeta que el proyecto -->
 ```{r leer-datos, echo=FALSE}
 mydataspi <- read.csv("mi_tabla.csv", row.names = NULL)
 ```
+
+<div style="text-align: justify;">
 Los datos de este proyecto fueron descargados desde [kaggle](https://www.kaggle.com/datasets/mexwell/spider-lab-gifts/data). En el proyecto se usaron `r length(unique(mydataspi$MALE.ID))` individuos macho de la especie *Pisaura mirabilis*. La tabla original presentaba `r ncol(mydataspi)` columnas, nosotros hemos seleccionado las columnas presentadas en la tabla 1.
+</div>
 
 <!--Creamos una tabla con los datos que se van a utilizar para tener una visión general-->
 
@@ -66,9 +79,9 @@ mydataspi %>%
   ggtitle("Relacion entre dieta y tiempo de envoltura total") +
   geom_jitter()
 ```
-
+<div style="text-align: justify;">
 En este caso se acepta **la hipótesis alternativa**, la dieta no afecta al tiempo de envoltura porque vemos que el dato de la **mediana** es similar en ambas dietas, la alta alimentacion presenta **mayor dispersión** ya que presenta valores mas extremos y por eso observamos que la caja es de mayor tamaño.  
-
+</div>
 <!-- insertar nueva página -->
 \newpage  
 
@@ -82,9 +95,9 @@ mydataspi %>%
   ggtitle("Relacion entre masa corporal masculina y dieta") +
   geom_jitter()
 ```
-
+<div style="text-align: justify;">
 En este caso se acepta **la hipótesis nula**, la dieta afecta a la masa corporal del macho antes del experimento, porque vemos que el dato de la **mediana** es mas bajo en la baja alimentacion (LF), por lo que los individuos con alta alimentacion presentan **mayor masa corporal**.  
-
+</div>
 
 **H0: Cambia el ancho del céfalotorax con el tipo de dieta**  
 **H1: No Cambia el ancho del céfalotorax con el tipo de dieta**
@@ -96,9 +109,9 @@ mydataspi %>%
   ggtitle("Relacion entre ancho del céfalotorax y dieta") +
   geom_jitter()
 ```
-
+<div style="text-align: justify;">
 En este caso se acepta **la hipótesis alternativa**, la dieta no afecta al ancho del cefalotórax del macho porque vemos que el dato de la **mediana** es similar en ambas dietas, la alta alimentacion presenta **mayor dispersión** ya que presenta valores mas extremos y por eso observamos que la caja es de mayor tamaño.  
-
+</div>
 
 **H0: El tiempo de envoltura es mayor cuanto mayor peso tiene la seda**  
 **H1: El peso de la seda no influye en el tiempo de envoltura**  
@@ -115,8 +128,9 @@ mydataspi %>%
 modelo <- lm(SILK.WEIGHT..mg. ~ TOT.WRAPPING.DURATION..sec., data = mydataspi)
 summary(modelo)
 ```
+<div style="text-align: justify;">
 En este caso hemos realizado un modelo de regresión lineal, donde hemos obtenido el **p-value: 0.009821**, sabiendo que si el valor es **p-Value < 0,05**, la relación entre el peso de la seda y el tiempo de envoltura es significativa por lo que se acepta **la hipótesis nula**, el tiempo de envoltura es mayor cuanto mayor peso tiene la seda.
-
+</div>
 
 **H0: La dieta afecta al peso de la seda**  
 **H1: La dieta no afecta al peso de la seda**  
@@ -127,18 +141,26 @@ mydataspi %>%
   ggtitle("Relación entre la dieta y el peso de la seda") +
   geom_jitter()
 ```
-
+<div style="text-align: justify;">
 En este caso se acepta **la hipótesis nula**, la dieta afecta al peso de la seda, porque vemos que el dato de la **mediana** es mas bajo en la baja alimentacion (LF), por lo que los individuos con alta alimentacion presentan **mayor peso de al seda**.  
 
 Para llevar a cabo el análisis usamos R [@R-base] con las librerias dplyr [@R-dplyr] y ggplot [@R-ggplot2; @ggplot22016]. Para la creación de este informe hemos utilizado el paquete knitr [@R-knitr; @knitr2015; @knitr2014] y pandoc y para crear PDFs tinytex [@tinytex2019]
-
+</div>
 ## 4. Conclusión  
+<div style="text-align: justify;">
 Una vez obtenidos todos los datos, podemos observar que la dieta no afecta al tiempo de envoltura total ni al ancho del cefalotórax de los machos, ya que son datos que no se ven afectados por el tipo de dieta pero si por el desarrollo individual de cada macho antes de comenzar con el experimento.  
 Sin embargo la dieta si que afecta a la masa corporal y al peso de la seda producida, lo que tiene sentido ya que los que presentan una alta alimentacion, tendran mayor masa corporal y producción de seda.  
 Por último, vemos que la duracion de la envoltura es mayor cuanto mayor es el peso de la seda, como era de esperar ya que si la seda pesa mas, es porque se ha dedicado mas tiempo a la envoltura.
-
+</div>
 ## 5. Bibliografía
+Ghislandi PG, Beyer M, Velado P, Tuni C (2017). La envoltura de seda de los regalos nupciales ayuda al comportamiento engañoso en las arañas masculinas. Ecología conductual 28 (3), 744-749. https://doi.org/10.1093/beheco/arx028↩︎
 
+<!-- Para asegurar la reproducibilidad de los resultados es necesario conocer el sistema operativo y la version de software y paquetes -->
+## Información de la sesión y referencias
 
+```{r sessionInfo, echo=FALSE}
+session <- sessionInfo()
+print(session)
+```
 
 

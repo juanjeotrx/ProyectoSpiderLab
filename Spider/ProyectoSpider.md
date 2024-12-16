@@ -1,13 +1,15 @@
 SPIDER LAB GIFTS
 ================
 Juan Jesús Oteros Rojas y Zaira Moreno Martín
-2024-12-15
+2024-12-16
 
 - [1. Introducción](#1-introducción)
 - [2. Materiales y Métodos](#2-materiales-y-métodos)
 - [3. Hipótesis y Resultados](#3-hipótesis-y-resultados)
 - [4. Conclusión](#4-conclusión)
 - [5. Bibliografía](#5-bibliografía)
+- [Información de la sesión y
+  referencias](#información-de-la-sesión-y-referencias)
 
 <img src="Logo_UCO.png" style="width:10.0%" />
 
@@ -35,13 +37,18 @@ propio beneficio reproductivo.[^1]
 ## 2. Materiales y Métodos
 
 <!-- cargar las librerias que vamos a utilizar, queremos que el código se ejecute, pero no que aparezca en el documento final, también excluímos los avisos y mensajes -->
+<!-- Al abrir los datos y revisarlos haciendo un summary, nos encontramos muchos datos perdidos o que faltaban (NA), para solucionar esto, al documento original "spider-lab-gifts.csv" le sometimos a un na.omit para eliminar las filas que contuvieran datos NA. Una vez eliminados los NA, teniamos que crear un nuevo documento .csv que contuvieran nuestros datos sin los NA, esto lo hicimos con write.csv-->
 <!-- Leer los datos desde el fichero que está en la misma carpeta que el proyecto -->
+
+<div style="text-align: justify;">
 
 Los datos de este proyecto fueron descargados desde
 [kaggle](https://www.kaggle.com/datasets/mexwell/spider-lab-gifts/data).
 En el proyecto se usaron 27 individuos macho de la especie *Pisaura
 mirabilis*. La tabla original presentaba 13 columnas, nosotros hemos
 seleccionado las columnas presentadas en la tabla 1.
+
+</div>
 
 <!--Creamos una tabla con los datos que se van a utilizar para tener una visión general-->
 
@@ -82,11 +89,15 @@ MALE.MASS.BEFORE.TRIAL..mg.: Masa de la araña macho antes de la prueba
 
 ![](ProyectoSpider_files/figure-gfm/Relacion%20entre%20dieta%20y%20tiempo%20de%20envoltura-1.png)<!-- -->
 
+<div style="text-align: justify;">
+
 En este caso se acepta **la hipótesis alternativa**, la dieta no afecta
 al tiempo de envoltura porque vemos que el dato de la **mediana** es
 similar en ambas dietas, la alta alimentacion presenta **mayor
 dispersión** ya que presenta valores mas extremos y por eso observamos
 que la caja es de mayor tamaño.
+
+</div>
 
 <!-- insertar nueva página -->
 **H0: Cambia la masa corporal masculina antes del experimento con las
@@ -96,15 +107,21 @@ diferentes dietas**
 
 ![](ProyectoSpider_files/figure-gfm/Relación%20entre%20masa%20corporal%20masculina%20antes%20del%20experimento%20y%20dieta-1.png)<!-- -->
 
+<div style="text-align: justify;">
+
 En este caso se acepta **la hipótesis nula**, la dieta afecta a la masa
 corporal del macho antes del experimento, porque vemos que el dato de la
 **mediana** es mas bajo en la baja alimentacion (LF), por lo que los
 individuos con alta alimentacion presentan **mayor masa corporal**.
 
+</div>
+
 **H0: Cambia el ancho del céfalotorax con el tipo de dieta**  
 **H1: No Cambia el ancho del céfalotorax con el tipo de dieta**
 
 ![](ProyectoSpider_files/figure-gfm/Relación%20entre%20en%20ancho%20del%20céfalotorax%20y%20la%20dieta-1.png)<!-- -->
+
+<div style="text-align: justify;">
 
 En este caso se acepta **la hipótesis alternativa**, la dieta no afecta
 al ancho del cefalotórax del macho porque vemos que el dato de la
@@ -112,11 +129,15 @@ al ancho del cefalotórax del macho porque vemos que el dato de la
 **mayor dispersión** ya que presenta valores mas extremos y por eso
 observamos que la caja es de mayor tamaño.
 
+</div>
+
 **H0: El tiempo de envoltura es mayor cuanto mayor peso tiene la
 seda**  
 **H1: El peso de la seda no influye en el tiempo de envoltura**  
 ![](ProyectoSpider_files/figure-gfm/Relación%20entre%20el%20tiempo%20de%20envoltura%20y%20el%20peso%20de%20la%20seda-1.png)<!-- -->
 <!-- Hemos realizado un modelo de regresión lineal para obtener datos estadísticos, que apoyen el gráfico pero que no se muestren completos en el documento de salida. En concreto nos interesa el p-Value -->
+
+<div style="text-align: justify;">
 
 En este caso hemos realizado un modelo de regresión lineal, donde hemos
 obtenido el **p-value: 0.009821**, sabiendo que si el valor es **p-Value
@@ -124,9 +145,13 @@ obtenido el **p-value: 0.009821**, sabiendo que si el valor es **p-Value
 es significativa por lo que se acepta **la hipótesis nula**, el tiempo
 de envoltura es mayor cuanto mayor peso tiene la seda.
 
+</div>
+
 **H0: La dieta afecta al peso de la seda**  
 **H1: La dieta no afecta al peso de la seda**  
 ![](ProyectoSpider_files/figure-gfm/Relación%20entre%20la%20dieta%20y%20el%20peso%20de%20la%20seda-1.png)<!-- -->
+
+<div style="text-align: justify;">
 
 En este caso se acepta **la hipótesis nula**, la dieta afecta al peso de
 la seda, porque vemos que el dato de la **mediana** es mas bajo en la
@@ -141,7 +166,11 @@ hemos utilizado el paquete knitr ([Xie 2024](#ref-R-knitr),
 [2015](#ref-knitr2015), [2014](#ref-knitr2014)) y pandoc y para crear
 PDFs tinytex ([Xie 2019](#ref-tinytex2019))
 
+</div>
+
 ## 4. Conclusión
+
+<div style="text-align: justify;">
 
 Una vez obtenidos todos los datos, podemos observar que la dieta no
 afecta al tiempo de envoltura total ni al ancho del cefalotórax de los
@@ -155,7 +184,50 @@ Por último, vemos que la duracion de la envoltura es mayor cuanto mayor
 es el peso de la seda, como era de esperar ya que si la seda pesa mas,
 es porque se ha dedicado mas tiempo a la envoltura.
 
+</div>
+
 ## 5. Bibliografía
+
+Ghislandi PG, Beyer M, Velado P, Tuni C (2017). La envoltura de seda de
+los regalos nupciales ayuda al comportamiento engañoso en las arañas
+masculinas. Ecología conductual 28 (3), 744-749.
+<https://doi.org/10.1093/beheco/arx028>↩︎
+
+<!-- Para asegurar la reproducibilidad de los resultados es necesario conocer el sistema operativo y la version de software y paquetes -->
+
+## Información de la sesión y referencias
+
+    ## R version 4.4.1 (2024-06-14)
+    ## Platform: aarch64-apple-darwin20
+    ## Running under: macOS 15.0.1
+    ## 
+    ## Matrix products: default
+    ## BLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib 
+    ## LAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0
+    ## 
+    ## locale:
+    ## [1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8
+    ## 
+    ## time zone: Europe/Madrid
+    ## tzcode source: internal
+    ## 
+    ## attached base packages:
+    ## [1] stats     graphics  grDevices utils     datasets  methods   base     
+    ## 
+    ## other attached packages:
+    ## [1] ggplot2_3.5.1 dplyr_1.1.4  
+    ## 
+    ## loaded via a namespace (and not attached):
+    ##  [1] vctrs_0.6.5       nlme_3.1-164      cli_3.6.3         knitr_1.48       
+    ##  [5] rlang_1.1.4       xfun_0.48         highr_0.11        generics_0.1.3   
+    ##  [9] labeling_0.4.3    glue_1.8.0        colorspace_2.1-1  htmltools_0.5.8.1
+    ## [13] scales_1.3.0      fansi_1.0.6       rmarkdown_2.28    grid_4.4.1       
+    ## [17] munsell_0.5.1     evaluate_1.0.1    tibble_3.2.1      fastmap_1.2.0    
+    ## [21] yaml_2.3.10       lifecycle_1.0.4   compiler_4.4.1    pkgconfig_2.0.3  
+    ## [25] mgcv_1.9-1        rstudioapi_0.17.0 lattice_0.22-6    farver_2.1.2     
+    ## [29] digest_0.6.37     R6_2.5.1          tidyselect_1.2.1  utf8_1.2.4       
+    ## [33] splines_4.4.1     pillar_1.9.0      magrittr_2.0.3    Matrix_1.7-0     
+    ## [37] withr_3.0.1       tools_4.4.1       gtable_0.3.5
 
 <div id="refs" class="references csl-bib-body hanging-indent"
 entry-spacing="0">
