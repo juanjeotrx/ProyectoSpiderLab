@@ -133,8 +133,10 @@ observamos que la caja es de mayor tamaño.
 
 **H0: El tiempo de envoltura es mayor cuanto mayor peso tiene la
 seda**  
-**H1: El peso de la seda no influye en el tiempo de envoltura**  
+**H1: El peso de la seda no influye en el tiempo de envoltura**
+
 ![](ProyectoSpider_files/figure-gfm/Relación%20entre%20el%20tiempo%20de%20envoltura%20y%20el%20peso%20de%20la%20seda-1.png)<!-- -->
+
 <!-- Hemos realizado un modelo de regresión lineal para obtener datos estadísticos, que apoyen el gráfico pero que no se muestren completos en el documento de salida. En concreto nos interesa el p-Value -->
 
 <div style="text-align: justify;">
@@ -148,7 +150,8 @@ de envoltura es mayor cuanto mayor peso tiene la seda.
 </div>
 
 **H0: La dieta afecta al peso de la seda**  
-**H1: La dieta no afecta al peso de la seda**  
+**H1: La dieta no afecta al peso de la seda**
+
 ![](ProyectoSpider_files/figure-gfm/Relación%20entre%20la%20dieta%20y%20el%20peso%20de%20la%20seda-1.png)<!-- -->
 
 <div style="text-align: justify;">
